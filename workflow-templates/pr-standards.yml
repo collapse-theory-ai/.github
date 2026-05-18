@@ -1,0 +1,40 @@
+name: PR Standards
+
+on:
+  pull_request:
+    types:
+      - opened
+      - edited
+      - reopened
+      - synchronize
+
+permissions:
+  pull-requests: read
+
+jobs:
+  conventional-title:
+    name: Conventional PR title
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate PR title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import sys
+
+          title = os.environ["PR_TITLE"]
+          allowed_types = "build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test"
+          pattern = re.compile(rf"^({allowed_types})(\([a-z0-9._-]+\))?!?: .+")
+
+          if pattern.match(title):
+              sys.exit(0)
+
+          print("PR title must follow Conventional Commits.")
+          print("Expected: feat: add parser or fix(ci): grant pubsub read")
+          print(f"Actual: {title}")
+          sys.exit(1)
+          PY

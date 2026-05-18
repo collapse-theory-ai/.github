@@ -1,0 +1,6 @@
+{
+  "name": "Ceres PR Standards",
+  "description": "Require pull request titles to follow Conventional Commits for clean squash merges.",
+  "iconName": "octicon checklist",
+  "categories": ["automation", "code-quality"]
+}

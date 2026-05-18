@@ -1,0 +1,7 @@
+{
+  "name": "Ceres Rust CI",
+  "description": "Run the shared Rust format, clippy, and test workflow.",
+  "iconName": "octicon gear",
+  "categories": ["Rust", "continuous-integration"],
+  "filePatterns": ["Cargo\\.toml$"]
+}

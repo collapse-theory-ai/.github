@@ -1,0 +1,6 @@
+{
+  "name": "Ceres Actions Hygiene",
+  "description": "Lint GitHub Actions workflows with actionlint and scan workflow security with zizmor.",
+  "iconName": "octicon shield-check",
+  "categories": ["automation", "code-quality"]
+}

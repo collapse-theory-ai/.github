@@ -1,0 +1,7 @@
+{
+  "name": "Ceres Python CI",
+  "description": "Run the shared Python uv, ruff, and pytest workflow.",
+  "iconName": "octicon beaker",
+  "categories": ["Python", "continuous-integration"],
+  "filePatterns": ["pyproject\\.toml$"]
+}
