@@ -1,0 +1,14 @@
+name: Python CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - $default-branch
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    uses: collapse-theory-ai/.github/.github/workflows/reusable-python-ci.yml@main

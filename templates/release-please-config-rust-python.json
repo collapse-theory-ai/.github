@@ -1,0 +1,15 @@
+{
+  "packages": {
+    ".": {
+      "release-type": "rust",
+      "package-name": "PROJECT_NAME",
+      "extra-files": [
+        {
+          "type": "toml",
+          "path": "pyproject.toml",
+          "jsonpath": "$.project.version"
+        }
+      ]
+    }
+  }
+}

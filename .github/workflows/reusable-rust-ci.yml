@@ -16,7 +16,9 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
 
       - name: Set up Rust
         uses: dtolnay/rust-toolchain@stable
@@ -25,4 +27,6 @@ jobs:
           components: rustfmt, clippy
 
       - name: Verify
-        run: ${{ inputs.verify-command }}
+        env:
+          VERIFY_COMMAND: ${{ inputs.verify-command }}
+        run: bash -euo pipefail -c "$VERIFY_COMMAND"
