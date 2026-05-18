@@ -1,0 +1,14 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    uses: collapse-theory-ai/.github/.github/workflows/reusable-rust-ci.yml@main

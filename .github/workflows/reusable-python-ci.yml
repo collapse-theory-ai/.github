@@ -1,0 +1,36 @@
+name: Reusable Python CI
+
+on:
+  workflow_call:
+    inputs:
+      python-version:
+        type: string
+        default: "3.12"
+      install-command:
+        type: string
+        default: "uv sync --all-extras --dev"
+      verify-command:
+        type: string
+        default: "uv run ruff check . && uv run ruff format --check . && uv run pytest"
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ inputs.python-version }}
+
+      - name: Install
+        run: ${{ inputs.install-command }}
+
+      - name: Verify
+        run: ${{ inputs.verify-command }}
