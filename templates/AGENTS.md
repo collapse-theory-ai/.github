@@ -7,7 +7,7 @@ Canonical instructions for AI coding agents working in `REPO_NAME`.
 - Purpose: PROJECT_DESCRIPTION
 - Primary runtime: RUNTIME_DESCRIPTION
 - Package manager: PACKAGE_MANAGER
-- Owning team: `@collapse-theory-ai/ceres`
+- Owning team: `@collapse-theory-ai/PROJECT_TEAM`
 
 ## Workflow
 

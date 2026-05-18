@@ -1,5 +1,5 @@
 {
-  "name": "Ceres Release Please",
+  "name": "Release Please",
   "description": "Create version bump PRs, changelogs, tags, and GitHub Releases from Conventional Commits.",
   "iconName": "octicon tag",
   "categories": ["deployment", "automation"]

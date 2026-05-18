@@ -18,6 +18,12 @@ infrastructure, call out cost or destructive behavior explicitly.
 
 ## Releases
 
-Use Release Please for repositories that publish packages, images, or other
-versioned artifacts. Release Please should open the version/changelog pull request;
-asset builds should run from the same release workflow after the release is created.
+Use Release Please for repositories that publish SemVer packages, wheels, SDKs, or
+other versioned artifacts. Service repositories should usually deploy immutable image
+digests instead of pretending every deploy is a package release. Infrastructure
+repositories should use reviewed plans and protected applies unless they publish
+reusable modules consumed by version.
+
+Organization-level release automation uses the CT Release Bot GitHub App and `CT_*`
+Actions configuration. Do not create project-named handles for reusable organization
+automation.
