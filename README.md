@@ -26,3 +26,7 @@ repo-specific release configuration.
   Actions security findings.
 - Dependency updates: keep Dependabot enabled for GitHub Actions, uv/Python, and
   Cargo unless a repo needs Renovate's grouping or custom scheduling.
+- Python CI: pin both `astral-sh/setup-uv` and the uv runtime. The org reusable
+  workflow defaults to uv `0.11.14` and `uv sync --locked`.
+- AI review: inherit CodeRabbit from `collapse-theory-ai/coderabbit`; add a
+  repo-local `.coderabbit.yaml` only for an intentional repo-specific override.

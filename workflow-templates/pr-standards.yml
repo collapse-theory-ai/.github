@@ -12,6 +12,33 @@ permissions:
   pull-requests: read
 
 jobs:
+  branch-name:
+    name: Conventional branch name
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Validate branch name
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import sys
+
+          branch = os.environ["HEAD_REF"]
+          allowed = "build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test"
+          pattern = re.compile(rf"^({allowed})/[a-z0-9._/-]+$")
+
+          if pattern.match(branch):
+              sys.exit(0)
+
+          print("Branch name must start with a conventional prefix.")
+          print("Expected: feat/example, fix/example, ci/example, docs/example")
+          print(f"Actual: {branch}")
+          sys.exit(1)
+          PY
+
   conventional-title:
     name: Conventional PR title
     runs-on: ubuntu-latest
