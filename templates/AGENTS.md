@@ -15,6 +15,8 @@ Canonical instructions for AI coding agents working in `REPO_NAME`.
 - Use conventional branch prefixes such as `feat/`, `fix/`, `docs/`, `ci/`, and
   `chore/`.
 - Use Conventional Commit subjects for commits and PR titles.
+- Inherit CodeRabbit from `collapse-theory-ai/coderabbit`; do not add
+  repo-local `.coderabbit.yaml` unless intentionally overriding org review policy.
 - Keep generated runtime state, credentials, caches, and vendor artifacts out of git.
 - Run the repo verification commands before claiming work is complete.
 - Ask before destructive, schema-breaking, or cloud-cost-incurring actions.
