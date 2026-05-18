@@ -10,6 +10,9 @@ on:
         type: string
         default: "cargo fmt --check && cargo clippy --all-targets --all-features -- -D warnings && cargo test --all-targets --all-features"
 
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest

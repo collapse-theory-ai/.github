@@ -16,6 +16,9 @@ on:
         type: string
         default: "uv run ruff check . && uv run ruff format --check . && uv run pytest"
 
+permissions:
+  contents: read
+
 jobs:
   verify:
     runs-on: ubuntu-latest
