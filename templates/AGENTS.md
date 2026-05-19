@@ -7,7 +7,7 @@ Canonical instructions for AI coding agents working in `REPO_NAME`.
 - Purpose: PROJECT_DESCRIPTION
 - Primary runtime: RUNTIME_DESCRIPTION
 - Package manager: PACKAGE_MANAGER
-- Owning team: `@collapse-theory-ai/ceres`
+- Owning team: `@collapse-theory-ai/PROJECT_TEAM`
 
 ## Workflow
 
@@ -20,6 +20,8 @@ Canonical instructions for AI coding agents working in `REPO_NAME`.
 - Keep generated runtime state, credentials, caches, and vendor artifacts out of git.
 - Run the repo verification commands before claiming work is complete.
 - Ask before destructive, schema-breaking, or cloud-cost-incurring actions.
+- Never merge pull requests, approve pull requests, enable auto-merge, or push
+  directly to a protected default branch. PR merge authority is human-only.
 
 ## Verification
 

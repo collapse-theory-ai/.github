@@ -17,3 +17,5 @@ repository.
 - Use Conventional Commit subjects for commits and pull request titles.
 - Prefer small, reviewable changes.
 - Verify templates and workflows before claiming completion.
+- Never merge pull requests, approve pull requests, enable auto-merge, or push
+  directly to a protected default branch. PR merge authority is human-only.

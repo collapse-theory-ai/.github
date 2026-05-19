@@ -1,0 +1,10 @@
+{
+  "name": "Release Please Rust/Python Wheel",
+  "description": "Create Release Please PRs and upload a manylinux wheel when a release is created.",
+  "iconName": "octicon package",
+  "categories": [
+    "Rust",
+    "Python",
+    "Release"
+  ]
+}

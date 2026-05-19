@@ -30,6 +30,9 @@ jobs:
           allowed = "build|chore|ci|docs|feat|fix|perf|refactor|revert|style|test"
           pattern = re.compile(rf"^({allowed})/[a-z0-9._/-]+$")
 
+          if branch.startswith("release-please--"):
+              sys.exit(0)
+
           if pattern.match(branch):
               sys.exit(0)
 
