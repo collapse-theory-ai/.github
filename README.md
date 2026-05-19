@@ -71,3 +71,6 @@ for AI automation.
   through `CT_RELEASE_APP_ID` and `CT_RELEASE_APP_PRIVATE_KEY`.
 - PR standards must allow Release Please bot branches such as
   `release-please--branches--main`.
+- uv-based package repos that commit `uv.lock` must include `uv.lock` in Release
+  Please `extra-files`; otherwise release PRs bump `pyproject.toml` while
+  `uv sync --locked` fails on the stale editable package version.
