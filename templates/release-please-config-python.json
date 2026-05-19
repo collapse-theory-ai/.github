@@ -2,7 +2,14 @@
   "packages": {
     ".": {
       "release-type": "python",
-      "package-name": "PROJECT_NAME"
+      "package-name": "PROJECT_NAME",
+      "extra-files": [
+        {
+          "type": "toml",
+          "path": "uv.lock",
+          "jsonpath": "$.package[?(@.name==\"PROJECT_NAME\")].version"
+        }
+      ]
     }
   }
 }
