@@ -52,6 +52,16 @@ Both should be restricted to the repositories that need the release bot.
 - AI review: inherit CodeRabbit from `collapse-theory-ai/coderabbit`; add a
   repo-local `.coderabbit.yaml` only for an intentional repo-specific override.
 
+## Human-Only Merges
+
+AI agents may create branches, commits, pull requests, and status reports, but
+must not merge pull requests, approve pull requests, enable auto-merge, or push
+directly to protected default branches.
+
+Repository rulesets or branch protection should require at least one approving
+human review, required status checks, linear history, and no bypass permissions
+for AI automation.
+
 ## Release Please Requirements
 
 - Enable the organization setting that allows GitHub Actions to create pull requests.
